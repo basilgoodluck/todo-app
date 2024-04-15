@@ -4,7 +4,7 @@ import '../styles/todoForm.css'
 export default function TodoForm(props) {
   return (
     <div className='todoForm--main'>
-        <form>
+        <form onSubmit={props.addTodo}>
             <div><input type="text" placeholder='what is your goal today?' name='task' value={props.task} onChange={props.getTask}/></div>
             <button>+</button>
         </form>
