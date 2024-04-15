@@ -1,0 +1,18 @@
+.header--main{
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    color: #ccc;
+    box-shadow: 0 0 5px #ad2800;
+}
+
+.header--main h4{
+    font-size: 18px;
+}
+@media screen and (max-width: 768px) {
+    .header--main{
+        padding: 20px 5%;
+    }   
+}

@@ -1,0 +1,33 @@
+.todo--main{
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo--main div{
+    display: flex;
+    align-items: center;
+}
+.todo--main div .toggle-check-btn{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.todo--main div .toggle-check-btn.checked{
+    background-color: green;
+    border-color: green;
+}
+.todo--main .todo{
+    padding: 0 10px;
+    color: #ddd;
+    font-size: 20px;
+}
+.todo--main div  .todo.checked{
+    text-decoration: line-through;
+}

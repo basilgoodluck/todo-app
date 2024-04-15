@@ -1,0 +1,33 @@
+.todoTracker--main{
+    border: 1px solid #ddd;
+    padding: 3% 5%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todoTracker--main .info--text {
+    color: #ccc;
+    padding: 10% 10% 0 0 ;
+}
+.todoTracker--main .info--text h1{
+    font-size: 24px;
+}
+.todoTracker--main .info--text p{
+    font-size: 18px;
+    padding-block: 10px;
+    font-weight: 100;
+}
+.todoTracker--main .score{
+    background-color: #ad2800;
+    border-radius: 50%;
+    padding: 5%;
+    font-size: 24px;
+    color: #000;
+}
+@media screen and (max-width: 1100px) {
+    .todoTracker--main .score{
+        padding: 4%;
+        font-size: 22px;
+    }   
+}
