@@ -3,17 +3,18 @@ import "../styles/todoWrapper.css"
 import Todo from "./todo";
 
 
-function TodoWrapper(props) {
+function TodoWrapper({appendTodo}) {
     const [tasksList, setTasksList] = useState([])
 
-    setTasksList(props.list.map((e)=>{
-        return <Todo todo={e}/>
+   
+    setTasksList(appendTodo.map(e=>{
+      return <Todo todo={e}/>
     }))
-    
+
 
   return (
     <div className='todoWrapper'>
-        {tasksList}
+      {tasksList}
     </div>
   )
 }

@@ -2,9 +2,6 @@ import React from 'react'
 import '../styles/todoForm.css'
 
 export default function TodoForm(props) {
-  const handleSubmit = function (e) {
-    e.preventDefault()
-  }
   return (
     <div className='todoForm--main'>
         <form onSubmit={props.handleSubmit}>

@@ -9,7 +9,7 @@ export default function TodoBody() {
 
   const [formData, setTask] = useState({
     task: "",
-    todoList: [],
+    todoItem: "",
   })
   const getTask = function (e) {
     setTask(data => ({
@@ -18,10 +18,12 @@ export default function TodoBody() {
     }))
     
   }
-  
+  let anArray = []
+
   const handleSubmit = function (e) {
     e.preventDefault()
-    formData.todoList.push(formData.task)
+    formData.todoItem = formData.task
+    anArray.push(formData.todoItem)
 }
   return (
     <div className="todoBody--main">
@@ -31,7 +33,7 @@ export default function TodoBody() {
         getTask = {getTask}
         handleSubmit={handleSubmit}
       />
-      <TodoWrapper />
+      <TodoWrapper appendTodo={anArray}/>
     </div>
   )
 }
