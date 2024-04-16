@@ -11,14 +11,23 @@ export default function TodoBody() {
   function updateInput (e) {
     setValue(e.target.value)
   }
+
+  let todoADD
+  function handleSubmit (e) {
+    e.preventDefault()
+    todoADD = value
+  }
   return (
     <div className="todoBody--main">
       <TodoTracker />
       <TodoForm 
         updateInput = {updateInput}
         inputValue={value}
+        handleSubmit={handleSubmit}
       />
-      <TodoWrapper />
+      <TodoWrapper 
+        todoADD = {todoADD}
+      />
     </div>
   )
 }
