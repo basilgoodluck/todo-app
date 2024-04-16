@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/todoWrapper.css"
 import Todo from "./todo";
 
 
-function TodoWrapper() {
+function TodoWrapper(props) {
+    const [tasksList, setTasksList] = useState([])
 
-    const anArray = ["We are glad to have you", "Love the way you lie", "Who is not happy"]
-    const funct = anArray.map((e)=>{
+    setTasksList(props.list.map((e)=>{
         return <Todo todo={e}/>
-    })
+    }))
+    
 
   return (
     <div className='todoWrapper'>
-        {funct} 
+        {tasksList}
     </div>
   )
 }

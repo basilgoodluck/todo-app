@@ -21,7 +21,7 @@ export default function TodoBody() {
   
   const handleSubmit = function (e) {
     e.preventDefault()
-
+    formData.todoList.push(formData.task)
 }
   return (
     <div className="todoBody--main">
