@@ -7,9 +7,9 @@ import { useState } from "react";
 
 export default function TodoWrapper() {
 
-  const [data, setTask] = useState({
+  const [formData, setTask] = useState({
     task: "",
-    todo: "",
+    todoList: [],
   })
   const getTask = function (e) {
     setTask(data => ({
@@ -20,15 +20,18 @@ export default function TodoWrapper() {
   }
   const addTodo = function (e) {
     e.preventDefault()
-    console.log(e.target.value)
+
+    formData.todoList.push(formData.task)
+    console.log(formData.todoList)
   }
+  
 
 
   return (
     <div className="todoWrapper--main">
       <TodoTracker />
       <TodoForm 
-        task = {data.task}
+        task = {formData.task}
         getTask = {getTask}
         addTodo = {addTodo}
       />
