@@ -1,40 +1,24 @@
 import TodoTracker from "./todoTracker";
 import "../styles/todoBody.css"
-import TodoForm from "./todoForm";
 import { useState } from "react";
 import TodoWrapper from './todoWrapper'
+import TodoForm from "./todoForm";
 
 
 export default function TodoBody() {
+  const [value, setValue] = useState("")
 
-  const [formData, setTask] = useState({
-    task: "",
-    todoItem: "",
-  })
-  const getTask = function (e) {
-    setTask(data => ({
-      ...data,
-      [e.target.name]: e.target.value
-    }))
-    
+  function updateInput (e) {
+    setValue(e.target.value)
   }
-  let anArray = []
-
-  const handleSubmit = function (e) {
-    e.preventDefault()
-    formData.todoItem = formData.task
-    anArray.push(formData.todoItem)
-}
   return (
     <div className="todoBody--main">
       <TodoTracker />
       <TodoForm 
-        task = {formData.task}
-        getTask = {getTask}
-        handleSubmit={handleSubmit}
+        updateInput = {updateInput}
+        inputValue={value}
       />
-      <TodoWrapper appendTodo={anArray}/>
+      <TodoWrapper />
     </div>
   )
 }
-

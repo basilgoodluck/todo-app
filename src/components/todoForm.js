@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/todoForm.css'
 
-export default function TodoForm(props) {
+export default function TodoForm({inputValue, updateInput}) {
+
   return (
     <div className='todoForm--main'>
-        <form onSubmit={props.handleSubmit}>
-            <div><input type="text" placeholder='what is your goal today?' name='task' value={props.task} onChange={props.getTask}/></div>
+        <form>
+            <div><input type="text" placeholder='What is your goal today?' name='task' value={inputValue} onChange={updateInput}/></div>
             <button>+</button>
         </form>
     </div>
