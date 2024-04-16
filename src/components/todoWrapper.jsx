@@ -1,7 +1,7 @@
 import TodoTracker from "./todoTracker";
 import "../styles/todoWrapper.css"
 import TodoForm from "./todoForm";
-// import Todo from "./todo";
+import Todo from "./todo";
 import { useState } from "react";
 
 
@@ -18,23 +18,27 @@ export default function TodoWrapper() {
     }))
     
   }
-  const addTodo = function (e) {
+  const handleSubmit = function (e) {
     e.preventDefault()
 
     formData.todoList.push(formData.task)
-    console.log(formData.todoList)
+  }
+
+  const addTodo = function () {
+    formData.todoList.map(e=>{
+      return <Todo todo={e} />
+    })
   }
   
-
-
   return (
     <div className="todoWrapper--main">
       <TodoTracker />
       <TodoForm 
         task = {formData.task}
         getTask = {getTask}
-        addTodo = {addTodo}
+        handleSubmit = {handleSubmit}
       />
+      {addTodo}
     </div>
   )
 }
