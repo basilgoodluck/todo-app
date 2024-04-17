@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
-import "../styles/todoWrapper.css"
-import Todo from "./todo";
+import TodoTracker from "./todoTracker";
+import { useState } from "react";
+import TodoForm from "./todoForm";
 
 
-function TodoWrapper({todoADD}) {
-
+export default function TodoWapper() {
   const [todos, setTodos] = useState([])
 
-  function addTodo () {
-    setTodos(()=>{return todos.push()})
+  const addTodo = todo => {
+    setTodos([...todos], {todo})
   }
 
-  return (
-    <div className='todoWrapper'>
-      {addTodo}
+  return ( 
+    <div className="todoWrapper--main">
+      <TodoTracker />
+      <TodoForm
+        addTodo={addTodo}
+      />
     </div>
   )
 }
-
-export default TodoWrapper
