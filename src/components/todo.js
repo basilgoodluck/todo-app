@@ -1,4 +1,3 @@
-import "../styles/todo.css"
 export default function Todo(props) {
   return (
     <div className="todo--main">

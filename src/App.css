@@ -6,23 +6,148 @@
     border: 0;
     box-sizing: border-box;
 }
-
 .app--main{
     background-color: #010503;
-    /* height: 100vh; */
     color: #fff;
     display: grid;
     row-gap: 50px;
     font-family: roboto;
 }
+.header--main{
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    color: #ccc;
+    box-shadow: 0 0 5px #ad2800;
+}
 
+.header--main h4{
+    font-size: 18px;
+}
+.todoWrapper--main{
+    width: 40%;
+    margin: 0 auto;
+    display: grid;
+    row-gap: 30px;
+    padding-bottom: 20px;
+}
+.todoTracker--main{
+    border: 1px solid #ddd;
+    padding: 3% 5%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todoTracker--main .info--text {
+    color: #ccc;
+    padding: 10% 10% 0 0 ;
+}
+.todoTracker--main .info--text h1{
+    font-size: 24px;
+}
+.todoTracker--main .info--text p{
+    font-size: 18px;
+    padding-block: 10px;
+    font-weight: 100;
+}
+.todoTracker--main .score{
+    background-color: #ad2800;
+    border-radius: 50%;
+    padding: 5%;
+    font-size: 24px;
+    color: #000;
+}
+
+.todoForm--main{
+    padding: 5% 2%;
+}
+.todoForm--main form{
+    display: flex;
+    justify-content: space-between;
+}
+.todoForm--main form div{
+    padding: 0 20px 0 0;
+    background-color: transparent;
+    width: 100%;
+}
+.todoForm--main form div input{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+    font-size: 16px;
+    font-weight: 100;
+    color: #ddd;
+}
+.todoForm--main form button{
+    padding: 10px;
+    background-color: #ad2800;
+    border-radius: 50%;
+    font-size: 44px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.todo--main{
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo--main div{
+    display: flex;
+    align-items: center;
+}
+.todo--main div .toggle-check-btn{
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.todo--main div .toggle-check-btn.checked{
+    background-color: green;
+    border-color: green;
+}
+.todo--main .todo{
+    padding: 0 10px;
+    color: #ddd;
+    font-size: 20px;
+}
+.todo--main div  .todo.checked{
+    text-decoration: line-through;
+}
 @media screen and (max-width: 1100px) {
     .app--main{
         row-gap: 30px;
     }   
+    .todoTracker--main .score{
+        padding: 4%;
+        font-size: 22px;
+    }   
+    .todoWrapper--main{
+        width: 65%;
+    }
 }
 @media screen and (max-width: 768px) {
     .app--main{
         row-gap: 20px;
+    }  
+    .header--main{
+        padding: 20px 5%;
     }   
+    .todoWrapper--main{
+        width: 90%;
+    }
 }

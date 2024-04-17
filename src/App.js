@@ -1,13 +1,13 @@
 import React from 'react'
 import Header from './components/header'
 import "./app.css"
-import TodoBody from './components/todoBody'
+import TodoWrapper from './components/todoWrapper'
 
 const App = () => {
   return (
     <div className='app--main'>
       <Header />
-      <TodoBody />
+      <TodoWrapper />
     </div>
   )
 }
