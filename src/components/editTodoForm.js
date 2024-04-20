@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
-export default function EditTodoForm({editTodo, task}) {
+export default function EditTodoForm({editTodo, task, addTodo}) {
 
   const [value, setValue] = useState(task.task)
   
   const handleSubmit = e =>{
     e.preventDefault()
     editTodo(value, task.id) 
+    setValue("")
   }
 
   return (
