@@ -27,8 +27,8 @@ export default function TodoWapper() {
     setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditiing} : todo))
   }
 
-  const editTask = id =>{
-    setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditiing: !todo.isEditiing}: todo))
+  const editTask = (task, id) =>{
+    setTodos(todos.map(todo => todo.id === id ? {task, isEditiing: !todo.isEditiing} : todo))
   }
   return ( 
     <div className="todoWrapper--main">
