@@ -23,10 +23,13 @@ export default function TodoWapper() {
   const toggleDelete = (id) => {
     setTodos(todos.filter(todo => todo.id !== id))
   }
-  const editTodo = id => {
+  const editTodo = (id) => {
     setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditiing} : todo))
   }
 
+  const editTask = id =>{
+    setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditiing: !todo.isEditiing}: todo))
+  }
   return ( 
     <div className="todoWrapper--main">
       <TodoTracker 
@@ -35,7 +38,10 @@ export default function TodoWapper() {
       <TodoForm addTodo={addTodo}/>
       {todos.map((todo, index) => (
         todo.isEditing ? (
-          <EditTodoForm />
+          <EditTodoForm
+            editTodo={editTask}
+            task={todo}
+          />
         ) : (
           <Todo 
             task = {todo} 

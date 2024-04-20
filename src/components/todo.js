@@ -11,7 +11,7 @@ export default function Todo(props) {
         <h1 className={`todo  ${props.task.completed ? 'checked' : ''}`} >{props.task.task}</h1>
       </div>
       <div className="btn--main">
-        <div className="edit" onClick={props.editTodo}>
+        <div className="edit" onClick={() => props.editTodo(props.task.id)}>
           <BiSolidEdit />
         </div>
         <div className="delete" onClick={() => props.toggleDelete(props.task.id)}>
