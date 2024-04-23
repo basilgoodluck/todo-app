@@ -7,6 +7,7 @@ export default function EditTodoForm({editTodo, task}) {
   const handleSubmit = e =>{
     e.preventDefault()
     editTodo(value, task.id) 
+    setValue("")
   }
 
   return (

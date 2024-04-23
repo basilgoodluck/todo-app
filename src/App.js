@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './components/header'
+import Header from './components/header.js'
 import "./app.css"
-import TodoWrapper from './components/todoWrapper'
+import TodoWrapper from './components/todoWrapper.js'
 
 const App = () => {
   return (

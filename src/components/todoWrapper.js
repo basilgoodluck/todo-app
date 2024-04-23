@@ -24,11 +24,14 @@ export default function TodoWapper() {
     setTodos(todos.filter(todo => todo.id !== id))
   }
   const editTodo = (id) => {
-    setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditiing} : todo))
+    setTodos(todos.map(todo => todo.id === id ? {...todo, isEditing: !todo.isEditing} : todo))
   }
 
   const editTask = (task, id) =>{
-    setTodos(todos.map(todo => todo.id === id ? {task, isEditiing: !todo.isEditiing} : todo))
+    if (task == ''){
+      return
+    }
+    setTodos(todos.map(todo => todo.id === id ? {...todo, task, isEditing: !todo.isEditing} : todo))
   }
   return ( 
     <div className="todoWrapper--main">
@@ -36,20 +39,22 @@ export default function TodoWapper() {
         totalTodos = {todos.length}
       />
       <TodoForm addTodo={addTodo}/>
-      {todos.map((todo, index) => (
-        todo.isEditing ? (
-          <EditTodoForm
-            editTodo={editTask}
-            task={todo}
-          />
-        ) : (
+      {todos.map((todo) => (
+        !todo.isEditing ? (
           <Todo 
             task = {todo} 
-            key={index} 
+            key={todo.id} 
             toggleCompleted = {toggleCompleted}
-            completed = {todos.completed}
+            completed = {todo.completed}
             toggleDelete = {toggleDelete}
             editTodo = {editTodo}
+          />
+
+        ) : (
+          <EditTodoForm
+            key={todo.id}
+            editTodo={editTask}
+            task={todo}
           />
         )
         
